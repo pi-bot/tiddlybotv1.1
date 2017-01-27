@@ -5,7 +5,7 @@ Understanding and open sourching the tiddlybot software.  The software from the 
 The goal is to port the TiddlyBot v1.1 software into this repo and to make it installable on any recent Raspian.  The software is divided into 3 parts:
 
 * DiscoveryBot API
-This is the lower level pyhthon library for controlling all the robots hardware.
+This is the lower level python library for controlling all the robots hardware.
 * DiscoveryServer
 This is the folder for running the webserver and hosted tiddlybot web app.
 * Dependencies 
