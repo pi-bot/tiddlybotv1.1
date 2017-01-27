@@ -6,9 +6,9 @@ The goal is to port the TiddlyBot v1.1 software into this repo and to make it in
 
 * DiscoveryBot API
 This is the lower level pyhthon library for controlling all the robots hardware
-*DiscoveryServer
+* DiscoveryServer
 This is the folder for running hte 
-*Dependencies 
+* Dependencies 
 This is a list of dependencies.  These are packages required to be downloaded to support the software.
 
 ### Install.sh
