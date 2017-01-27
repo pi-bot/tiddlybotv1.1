@@ -36,10 +36,13 @@ From this site (http://stackoverflow.com/questions/10963878/how-do-you-fork-your
 
 
 ```
-git clone https://github.com/userName/Repo New_Repo
-cd New_Repo
-git remote set-url origin https://github.com/userName/New_Repo
-git remote add upstream https://github.com/userName/Repo
+git clone https://github.com/pi-bot/TiddlyBlockly
+cd TiddlyBlockly
+git remote set-url origin https://github.com/pi-bot/TiddlyBlockly
+git remote add upstream https://github.com/pi-bot/ardublockly
 git push origin master
 git push --all
 ```
+Questions to answer:
+How to complete updates from carlosperate/ardublockly >>pi-bot/ardublockly >> pi-bot/tiddlyblockly
+
