@@ -1,0 +1,1 @@
+<xml xmlns="http://www.w3.org/1999/xhtml"><block type="discovery_forward" x="18" y="62"><next><block type="discovery_wait" inline="false"><value name="TIME"><block type="math_number"><field name="NUM">8</field></block></value><next><block type="discovery_stop"></block></next></block></next></block></xml>
