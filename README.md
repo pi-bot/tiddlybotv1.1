@@ -26,9 +26,9 @@ The strategy for opensourcing and forking the contributions to the **TiddlyBlock
 ```
 carlosperate/ardublockly
 pi-bot/ardublockly
-pi-bot/tiddlyblockly
+pi-bot/tiddlyBlockly
 ```
-The tiddlyblockly is a clone of ardublockly and can then add its additions.
+**tiddlyBlockly** is a clone of ardublockly and with added code/configuration clearly shown.
 
 From this site (http://stackoverflow.com/questions/10963878/how-do-you-fork-your-own-project-on-github)
  
