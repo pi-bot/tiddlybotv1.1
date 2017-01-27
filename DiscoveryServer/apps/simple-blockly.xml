@@ -1,1 +1,0 @@
-<xml xmlns="http://www.w3.org/1999/xhtml"><block type="controls_repeat_ext" inline="true" x="76" y="66"><value name="TIMES"><block type="discovery_ultrasound"></block></value><statement name="DO"><block type="discovery_red_on"><next><block type="discovery_red_off"></block></next></block></statement></block></xml>
