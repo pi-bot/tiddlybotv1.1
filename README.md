@@ -36,7 +36,7 @@ From this site (http://stackoverflow.com/questions/10963878/how-do-you-fork-your
 
 
 ```
-git clone https://github.com/pi-bot/TiddlyBlockly
+git clone https://github.com/pi-bot/ardublockly TiddlyBlockly
 cd TiddlyBlockly
 git remote set-url origin https://github.com/pi-bot/TiddlyBlockly
 git remote add upstream https://github.com/pi-bot/ardublockly
