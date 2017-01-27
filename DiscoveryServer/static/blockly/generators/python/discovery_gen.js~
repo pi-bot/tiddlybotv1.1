@@ -1,0 +1,182 @@
+/**
+ * Visual Blocks Language
+ *
+ * Copyright 2012 Google Inc.
+ * http://blockly.googlecode.com/
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * @fileoverview Generating Python for procedure blocks.
+ * @author enavarro222@gmail.com (Emmanuel Navarro)
+ */
+'use strict';
+
+goog.provide('Blockly.Python.discovery');
+
+goog.require('Blockly.Python');
+
+Blockly.Python.DISCOVERY_TIME = 'import time';
+
+Blockly.Python.DISCOVERY_MOVEMENT = 'from discovery_bot import Movement';
+Blockly.Python.DISCOVERY_MOVEMENT_DEF = 'robot = Movement()';
+
+Blockly.Python.DISCOVERY_ULTRASOUND = 'from discovery_bot import Ultrasound';
+Blockly.Python.DISCOVERY_ULTRASOUND_DEF = 'usound = Ultrasound()';
+
+Blockly.Python.DISCOVERY_INFRARED = 'from discovery_bot import Infrared';
+Blockly.Python.DISCOVERY_INFRARED_DEF = 'ir = Infrared()';
+
+Blockly.Python.DISCOVERY_LIGHT = 'from discovery_bot import Light';
+Blockly.Python.DISCOVERY_PINS = 'from discovery_bot import pins';
+Blockly.Python.DISCOVERY_LIGHT_RED_DEF = 'red = Light(pins.LED_RED)';
+Blockly.Python.DISCOVERY_LIGHT_BLUE_DEF = 'blue = Light(pins.LED_BLUE)';
+Blockly.Python.DISCOVERY_LIGHT_GREEN_DEF = 'green = Light(pins.LED_GREEN)';
+
+/**
+ * 
+ */
+Blockly.Python._time_needed = function(){
+  Blockly.Python.definitions_['import_time'] = Blockly.Python.DISCOVERY_TIME;
+}
+
+Blockly.Python._movement_needed = function(){
+  Blockly.Python.definitions_['import_movement'] = Blockly.Python.DISCOVERY_MOVEMENT;
+  Blockly.Python.definitions_['def_movement'] = Blockly.Python.DISCOVERY_MOVEMENT_DEF;
+}
+
+Blockly.Python._infrared_needed = function(){
+  Blockly.Python.definitions_['import_infrared'] = Blockly.Python.DISCOVERY_INFRARED;
+  Blockly.Python.definitions_['def_infrared'] = Blockly.Python.DISCOVERY_INFRARED_DEF;
+}
+
+Blockly.Python._ultrasound_needed = function(){
+  Blockly.Python.definitions_['import_ultrasound'] = Blockly.Python.DISCOVERY_ULTRASOUND;
+  Blockly.Python.definitions_['def_ultrasound'] = Blockly.Python.DISCOVERY_ULTRASOUND_DEF;
+}
+
+Blockly.Python._lights_needed = function(){
+  Blockly.Python.definitions_['import_lights'] = Blockly.Python.DISCOVERY_LIGHT;
+  Blockly.Python.definitions_['import_pins'] = Blockly.Python.DISCOVERY_PINS;
+  Blockly.Python.definitions_['def_light_red'] = Blockly.Python.DISCOVERY_LIGHT_RED_DEF;
+  Blockly.Python.definitions_['def_light_blue'] = Blockly.Python.DISCOVERY_LIGHT_BLUE_DEF;
+  Blockly.Python.definitions_['def_light_green'] = Blockly.Python.DISCOVERY_LIGHT_GREEN_DEF;
+}
+
+/******************************************************************************/
+
+Blockly.Python['discovery_wait'] = function(block) {
+  Blockly.Python._time_needed();
+
+  var value_time = Blockly.Python.valueToCode(block, 'TIME', Blockly.Python.ORDER_ATOMIC) || '0';
+  var code = 'time.sleep('+value_time+')\n';
+  return code;
+};
+
+/******************************************************************************/
+
+Blockly.Python['discovery_forward'] = function(block) {
+  Blockly.Python._movement_needed();
+
+  var code = 'robot.forward()\n';
+  return code;
+};
+
+Blockly.Python['discovery_turn_left'] = function(block) {
+  Blockly.Python._movement_needed();
+
+  var code = 'robot.turn_left()\n';
+  return code;
+};
+
+Blockly.Python['discovery_turn_right'] = function(block) {
+  Blockly.Python._movement_needed();
+
+  var code = 'robot.turn_right()\n';
+  return code;
+};
+
+Blockly.Python['discovery_backward'] = function(block) {
+  Blockly.Python._movement_needed();
+
+  var code = 'robot.backward()\n';
+  return code;
+};
+
+Blockly.Python['discovery_stop'] = function(block) {
+  Blockly.Python._movement_needed();
+
+  var code = 'robot.stop()\n';
+  return code;
+};
+
+/******************************************************************************/
+
+Blockly.Python['discovery_ultrasound'] = function(block) {
+  Blockly.Python._ultrasound_needed();
+
+  var code = 'usound.read_normalized()';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['discovery_on_line'] = function(block) {
+  Blockly.Python._infrared_needed();
+
+  var code = 'ir.is_on_line()';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/******************************************************************************/
+
+Blockly.Python['discovery_red_on'] = function(block) {
+  Blockly.Python._lights_needed();
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'red.on()\n';
+  return code;
+};
+
+Blockly.Python['discovery_red_off'] = function(block) {
+  Blockly.Python._lights_needed();
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'red.off()\n';
+  return code;
+};
+
+Blockly.Python['discovery_blue_on'] = function(block) {
+  Blockly.Python._lights_needed();
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'blue.on()\n';
+  return code;
+};
+
+Blockly.Python['discovery_blue_off'] = function(block) {
+  Blockly.Python._lights_needed();
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'blue.off()\n';
+  return code;
+};
+
+Blockly.Python['discovery_green_on'] = function(block) {
+  Blockly.Python._lights_needed();
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'red.off()\n';
+  return code;
+};
+
+Blockly.Python['discovery_green_off'] = function(block) {
+  Blockly.Python._lights_needed();
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'green.off()\n';
+  return code;
+};

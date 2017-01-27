@@ -1,0 +1,87 @@
+body {
+    padding-top: 65px; 
+}
+
+span.shortcut_help {
+    color: #777;
+    font-size: 0.8em;
+}
+
+/* -------------------------------------------------------------------------- */
+#toast-container {
+    top: 62px;
+}
+
+#toast-container>div {
+    width: 370px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* hack to have real inline form */
+form.form-inline div {
+    display: inline-block;
+}
+
+/* -------------------------------------------------------------------------- */
+#blockly_editor_mask {
+    height: 500px;
+    border: 1px solid green;
+}
+
+#blockly_editor_container {
+    position: relative;
+}
+
+#the_blockly_editor { 
+    padding: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+#ace_editor_mask {
+    height: 300px;
+    overflow-y: hidden;
+}
+
+#ace_editor_container {
+    position: relative;
+    height: 10000px;
+}
+
+#the_ace_editor { 
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    font-size: 15px;
+}
+
+/*Readonly overlay for the two editors*/
+.overlay {
+    display: none;
+    position: absolute;
+    background: #743;
+    opacity: 0.5;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+/* -------------------------------------------------------------------------- */
+#simu_dashboard{
+    position: fixed;
+    left: 0px;
+    top: 65px;
+}
+
+ul.led_pixels{
+    list-style: none;
+}
+
+ul.led_pixels li{
+    height: 20px;
+    width: 20px;
+}
+
