@@ -1,5 +1,5 @@
 # tiddlybotv1.1
-Understanding and open sourching the tiddlybot software.  The software from the TiddlyBot v1.1 sourcecode has been uploaded to the **pi** folder. 
+Understanding and open sourching the tiddlybot software.  The software from the TiddlyBot v1.1 source-code has been uploaded to the **pi** folder. 
 
 ## Goal  
 The goal is to port the TiddlyBot v1.1 software into this repo and to make it installable on any recent Raspian.  The software is divided into 3 parts:
